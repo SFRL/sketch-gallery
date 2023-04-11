@@ -11,6 +11,9 @@ const Study2 = () => {
   return (
     <Layout>
       <section className="section">
+        <h1 class="title">Study 2</h1>
+      </section>
+      <section className="section">
         <div class="control">
           <label class="radio">
             <input

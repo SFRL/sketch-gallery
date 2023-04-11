@@ -13,6 +13,7 @@ import React from "react";
 
     const getSvgElements = (svgs, order, counter) => {
       // Sort svgs according to state
+      console.log(`order is ${order}`)
       if (order) svgs.sort((a, b) => sortSvgs(a[order], b[order]));
       return (
         <>
@@ -30,7 +31,7 @@ import React from "react";
                 <>
                   {breakElement}
                   <div className="column is-1" key={`marker_${i}`}>
-                    <div className="box is-shadowless">{counter}</div>
+                    <div className="box is-shadowless">{order === "soundID" ? object.soundID : counter}</div>
                   </div>
                 </>
               );
