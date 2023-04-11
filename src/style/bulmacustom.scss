@@ -1,0 +1,10 @@
+// Overwrite any bulma variables here
+
+@import "~bulma/bulma.sass";
+
+.navbar {
+    // Add margin to logos
+    .gatsby-image-wrapper {
+        margin: 10px;
+    }   
+}
