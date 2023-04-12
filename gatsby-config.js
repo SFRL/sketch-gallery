@@ -6,6 +6,7 @@ module.exports = {
     title: `sketch-gallery`,
     siteUrl: `https://www.yourdomain.tld`,
   },
+  pathPrefix: "/sketch-gallery",
   plugins: [
     "gatsby-plugin-sass",
     "gatsby-plugin-image",

@@ -15,7 +15,6 @@ import Modal from "../components/modal";
     const getSvgElements = (svgs, order, activateModel) => {
       let counter = 1;
       // Sort svgs according to state
-      console.log(`order is ${order}`)
       if (order) svgs.sort((a, b) => sortSvgs(a[order], b[order]));
       return (
         <>
