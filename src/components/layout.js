@@ -13,7 +13,7 @@ const Layout = (props) => {
         const data = useStaticQuery(graphql`
           {
             logo: file(
-              absolutePath: { regex: "/images/.*icon.*/" }
+              absolutePath: { regex: "/images/.*soundsketch*/" }
               extension: { eq: "png" }
             ) {
               id
