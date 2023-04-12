@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Layout from "../components/layout";
 import SvgGrid from "../components/svgGrid";
 import svgs from "../svgs/study1Import";
+import sounds from "../sounds/study1Import";
 
 const Study1 = () => {
   const [order, setOrder] = useState("");
@@ -37,7 +38,7 @@ const Study1 = () => {
       </section>
       <section className="section">
         <div className="columns is-multiline">
-          <SvgGrid svgs={svgs} order={order} />
+          <SvgGrid svgs={svgs} order={order} sounds={sounds}/>
         </div>
       </section>
     </Layout>

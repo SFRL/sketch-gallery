@@ -2,6 +2,7 @@ import React, { useState} from "react";
 import Layout from "../components/layout";
 import SvgGrid from "../components/svgGrid";
 import svgs from "../svgs/study2Import";
+import sounds from "../sounds/study2Import";
 
 
 const Study2 = () => {
@@ -37,7 +38,7 @@ const Study2 = () => {
       </section>
       <section className="section">
         <div className="columns is-multiline">
-          <SvgGrid svgs={svgs} order={order} />
+          <SvgGrid svgs={svgs} order={order} sounds={sounds}/>
         </div>
       </section>
     </Layout>

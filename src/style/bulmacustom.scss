@@ -22,3 +22,26 @@ $primary: #f6d13a;
         max-height: 100%;
     }
 }
+
+
+// Handle svg modals
+.modal {
+    .image {
+        svg {
+            width: 600px;
+            height: 600px;
+            max-width: 100vw;
+            max-height: 100vh;
+
+            @include until($desktop) {
+                width: 400px;
+                height: 400px;
+            }
+
+            @include until($tablet) {
+                width: 300px;
+                height: 300px;
+            }
+        }
+    }
+}

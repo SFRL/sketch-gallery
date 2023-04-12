@@ -1,4 +1,5 @@
-import React from "react";
+import React, {useState, useCallback} from "react";
+import Modal from "../components/modal";
 
     const sortSvgs = (a, b) => {
       if (a < b) {
@@ -11,7 +12,8 @@ import React from "react";
       return 0;
     };
 
-    const getSvgElements = (svgs, order, counter) => {
+    const getSvgElements = (svgs, order, activateModel) => {
+      let counter = 1;
       // Sort svgs according to state
       console.log(`order is ${order}`)
       if (order) svgs.sort((a, b) => sortSvgs(a[order], b[order]));
@@ -44,7 +46,7 @@ import React from "react";
                 <div
                   key={`svg${i}`}
                   className="column is-1"
-                  // onClick={() => setShowPopup(i)}
+                  onClick={() => activateModel(object)}
                 >
                   <div className="box is-clickable">{object.svg}</div>
                 </div>
@@ -55,6 +57,20 @@ import React from "react";
       );
     };
 
-const SvgGrid = ({ svgs, order }) => getSvgElements(svgs, order, 1);
+const SvgGrid = ({ svgs, order, sounds }) => {
+  
+  const [svgObject, setSvgObject] = useState(false);
+
+  const activateModel = useCallback((object) => {
+    setSvgObject(object);
+  }, []);
+  
+  return (
+    <>
+      <Modal svgObject={svgObject} sound={svgObject&&sounds?sounds[svgObject.soundID]:undefined} changeModalCallback={activateModel}/> 
+      {getSvgElements(svgs, order, activateModel)}
+    </>
+  )
+};
 
 export default SvgGrid;
